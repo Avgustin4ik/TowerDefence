@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed548e218707488083d414dad3d2a170, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  <CastleHealth>k__BackingField: 0
-  <WaveDuration>k__BackingField: 0
+  <CastleHealth>k__BackingField: 50
+  <WaveDuration>k__BackingField: 10

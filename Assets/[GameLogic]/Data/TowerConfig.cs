@@ -9,5 +9,6 @@ namespace _GameLogic_.Data
         [field: SerializeField] public float DefaultTowerFireRate { get; private set; }
         [field: SerializeField] public float UpgradeCostMultiplayer { get; private set; }
         [field: SerializeField] public float UpgradeStatsMultiplayer { get; private set; }
+        [field: SerializeField] public float DefaultTowerUpgradeCost { get; set; }
     }
 }

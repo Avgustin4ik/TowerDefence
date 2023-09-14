@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465463a6206c4555a330adfbae5eb5a2, type: 3}
   m_Name: EnemyConfig
   m_EditorClassIdentifier: 
-  <DefaultEnemyHp>k__BackingField: 0
-  <DefaultEnemyDamage>k__BackingField: 0
-  <DefaultEnemyReward>k__BackingField: 0
-  <EnemyDifficultMultiplayer>k__BackingField: 0
-  <MaxAdditionalEnemyCount>k__BackingField: 0
-  <EnemySpawnDelay>k__BackingField: 0
-  <EnemySpawnMaxAmount>k__BackingField: 0
+  <DefaultEnemyHp>k__BackingField: 10
+  <DefaultEnemyDamage>k__BackingField: 4
+  <DefaultEnemyReward>k__BackingField: 50
+  <EnemyDifficultMultiplayer>k__BackingField: 1.2
+  <MaxAdditionalEnemyCount>k__BackingField: 5
+  <EnemySpawnDelay>k__BackingField: 2

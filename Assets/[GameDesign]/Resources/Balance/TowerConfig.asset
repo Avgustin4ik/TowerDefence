@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58543e42c7d048bab6d7fa19e54a1fec, type: 3}
   m_Name: TowerConfig
   m_EditorClassIdentifier: 
-  <DefaultTowerDamage>k__BackingField: 0
-  <DefaultTowerFireRate>k__BackingField: 0
-  <UpgradeCostMultiplayer>k__BackingField: 0
-  <UpgradeStatsMultiplayer>k__BackingField: 0
+  <DefaultTowerDamage>k__BackingField: 3
+  <DefaultTowerFireRate>k__BackingField: 1
+  <UpgradeCostMultiplayer>k__BackingField: 2
+  <UpgradeStatsMultiplayer>k__BackingField: 1.5
+  <DefaultTowerUpgradeCost>k__BackingField: 0

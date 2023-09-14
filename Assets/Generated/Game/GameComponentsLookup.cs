@@ -36,10 +36,11 @@ public static class GameComponentsLookup {
     public const int Clicked = 25;
     public const int Tower = 26;
     public const int TowerLevel = 27;
-    public const int AnySoftCurrencyListener = 28;
-    public const int Input = 29;
+    public const int UpgradeCost = 28;
+    public const int AnySoftCurrencyListener = 29;
+    public const int Input = 30;
 
-    public const int TotalComponents = 30;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "HashCode",
@@ -70,6 +71,7 @@ public static class GameComponentsLookup {
         "Clicked",
         "Tower",
         "TowerLevel",
+        "UpgradeCost",
         "AnySoftCurrencyListener",
         "Input"
     };
@@ -103,6 +105,7 @@ public static class GameComponentsLookup {
         typeof(_GameLogic_.Input.Components.ClickedComponent),
         typeof(_GameLogic_.Towers.Component.TowerComponent),
         typeof(_GameLogic_.Towers.Component.TowerLevelComponent),
+        typeof(_GameLogic_.Towers.Component.UpgradeCostComponent),
         typeof(AnySoftCurrencyListenerComponent),
         typeof(InputComponent)
     };

@@ -1,12 +1,15 @@
 using Entitas;
+using UnityEngine;
 
 namespace _GameLogic_.Data.Systems
 {
     public class InitializeDataSystem : IInitializeSystem
     {
+        private GameSettings _gameSettings;
+
         public InitializeDataSystem(Contexts contexts)
         {
-            
+            _gameSettings = Resources.Load<GameSettings>("Balance/GameSettings");
         }
 
         public void Initialize()
@@ -15,7 +18,8 @@ namespace _GameLogic_.Data.Systems
             data.isGameData = true;
             data.AddSoftCurrency(0);
             data.AddWaveLevel(1);
-            data.AddTimerAmount(30);//wave timer
+            data.AddTimerAmount(_gameSettings.WaveDuration);
+            data.AddCooldown(_gameSettings.WaveDuration);
         }
     }
 }

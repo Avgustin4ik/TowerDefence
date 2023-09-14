@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _GameLogic_.Data;
 using DesperateDevs.Utils;
 using Entitas;
 using Entitas.Unity;
@@ -8,14 +9,17 @@ namespace _GameLogic_.Enemy
 {
     public class EnemySpawnerSystem : ReactiveSystem<GameEntity>,IInitializeSystem
     {
+        public static ObjectPool<EnemyView> Pool;
         private readonly GameContext _contextsGame;
         private GameEntity _spawnerEntity;
-        public static ObjectPool<EnemyView> Pool;
         private EnemyView _prefab;
+        private EnemyConfig _enemyConfig;
+        private const int PoolLenght = 20;
 
-        public EnemySpawnerSystem(Contexts contexts) : base(contexts.game)
+        public EnemySpawnerSystem(Contexts contexts, EnemyConfig enemyConfig) : base(contexts.game)
         {
             _contextsGame = contexts.game;
+            _enemyConfig = enemyConfig;
         }
 
         public void Initialize()
@@ -23,14 +27,15 @@ namespace _GameLogic_.Enemy
             
             _spawnerEntity = _contextsGame.CreateEntity();
             _spawnerEntity.isEnemySpawner = true;
-            _spawnerEntity.AddCooldown(2f);
-            _spawnerEntity.AddEnemyAmount(10);
+            _spawnerEntity.AddCooldown(_enemyConfig.EnemySpawnDelay);
+            var curWave = 1;
+            _spawnerEntity.AddEnemyAmount(UnityEngine.Random.Range(curWave, curWave + _enemyConfig.MaxAdditionalEnemyCount));
             _spawnerEntity.AddTimerAmount(_spawnerEntity.cooldown.value);
             var spawnerView = UnityEngine.Object.FindObjectOfType<SpawnerView>();
             spawnerView.Link(_spawnerEntity);
             _prefab = spawnerView.EnemyViewPrefab;
             Pool = new ObjectPool<EnemyView>(InstantiateEnemy,UnlinkEnemy);
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < PoolLenght; i++)
             {
                 Pool.Push(InstantiateEnemy());
             }
@@ -49,7 +54,7 @@ namespace _GameLogic_.Enemy
 
         private EnemyView InstantiateEnemy()
         {
-            var enemyView = UnityEngine.Object.Instantiate(_prefab);
+            var enemyView = UnityEngine.Object.Instantiate(_prefab, _spawnerEntity.spawnPoint.value, Quaternion.identity);
             _prefab.transform.position = _spawnerEntity.transform.value.position;
             return enemyView;
         }
@@ -67,16 +72,15 @@ namespace _GameLogic_.Enemy
         protected override void Execute(List<GameEntity> entities)
         {
             var enemyView = Pool.Get();
-            Transform transform;
-            (transform = enemyView.transform).gameObject.SetActive(true);
-            transform.position = _spawnerEntity.transform.value.position;
+            enemyView.transform.gameObject.SetActive(true);
             _spawnerEntity.ReplaceEnemyAmount(_spawnerEntity.enemyAmount.value - 1);
             var enemyEntity = _contextsGame.CreateEntity();
             enemyView.Link(enemyEntity);
-            enemyEntity.ReplaceAttackDamage(4f);
-            enemyEntity.ReplaceHealth(10);
-            enemyEntity.ReplaceReward(50);
+            enemyEntity.ReplaceAttackDamage(_enemyConfig.DefaultEnemyDamage);
+            enemyEntity.ReplaceHealth(_enemyConfig.DefaultEnemyHp);
+            enemyEntity.ReplaceReward(_enemyConfig.DefaultEnemyReward);
             enemyEntity.ReplaceNMAgentDestination(_contextsGame.castleEntity.transform.value.position);
+            enemyEntity.transform.value.position = _spawnerEntity.spawnPoint.value;
         }
     }
 }

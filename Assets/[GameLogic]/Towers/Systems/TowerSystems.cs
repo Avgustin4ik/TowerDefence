@@ -1,3 +1,5 @@
+using System;
+
 namespace _GameLogic_.Towers.Systems
 {
     public class TowerSystems : Feature
@@ -5,7 +7,7 @@ namespace _GameLogic_.Towers.Systems
         public TowerSystems(Contexts contexts)
         {
             Add(new TowerInitializeSystem(contexts));
-            // Add(new TowerAttackSystem(contexts));
+            Add(new TowerAttackSystem(contexts));
             // Add(new TowerDetectionAreaSystem(contexts));
         }
     }

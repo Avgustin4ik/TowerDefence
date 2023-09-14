@@ -28,6 +28,7 @@ namespace _GameLogic_.Common
             foreach (var gameEntity in entities)
             {
                 var targetEntity = _contextsGame.GetEntityWithHashCode(gameEntity.attack.targetHashcode);
+                if(targetEntity == null) continue;
                 targetEntity.ReplaceHealth(targetEntity.health.value - gameEntity.attackDamage.value);
                 if(gameEntity.hasFireRate) gameEntity.ReplaceTimerAmount(1f/gameEntity.fireRate.value);
                 gameEntity.RemoveAttack();

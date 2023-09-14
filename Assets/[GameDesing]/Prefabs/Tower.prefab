@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1380898565047641746}
   - component: {fileID: 1380898565047641747}
   - component: {fileID: 7878718774516168449}
+  - component: {fileID: 25792096836737496}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -97,3 +98,16 @@ MonoBehaviour:
   size: {x: 6, y: 2, z: 6}
   frameColor: {r: 0.12834764, g: 1, b: 0, a: 1}
   fillColor: {r: 0.5377358, g: 0.26514944, b: 0.18009079, a: 0.2}
+--- !u!114 &25792096836737496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380898565047641750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f5c437728e48d1acebf3cbc5a6201c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionArea: {fileID: 7878718774516168449}

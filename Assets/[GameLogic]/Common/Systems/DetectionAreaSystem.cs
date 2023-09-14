@@ -17,8 +17,7 @@ namespace _GameLogic_.Common
         public DetectionAreaSystem(Contexts contexts)
         {
             _enemyGroup = contexts.game.GetGroup(GameMatcher.Enemy);
-            _detectionAreaGroup = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.DetectionArea)
-                .NoneOf(GameMatcher.DetectionAreaTrigger));
+            _detectionAreaGroup = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.DetectionArea));
         }
 
         public void Execute()
@@ -29,10 +28,9 @@ namespace _GameLogic_.Common
                 {
                     if (IsInFlatArea(enemy.transform.value.position, detectionEntity.detectionArea.value))
                     {
-                        detectionEntity.AddDetectionAreaTrigger(enemy.hashCode.value);
+                        if(!detectionEntity.hasDetectionAreaTrigger) detectionEntity.AddDetectionAreaTrigger(enemy.hashCode.value);
                         continue;
                     }
-                    
                     if(detectionEntity.hasDetectionAreaTrigger) detectionEntity.RemoveDetectionAreaTrigger();
                     
                 }

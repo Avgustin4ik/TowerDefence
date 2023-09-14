@@ -1,3 +1,4 @@
+using System;
 using _GameLogic_.Castle.Views;
 using Entitas;
 
@@ -10,7 +11,7 @@ namespace _GameLogic_.Enemy
             Add(new NavMeshMovingSystem(contexts));
             Add(new EnemyAttackSystem(contexts));
             Add(new EnemyDetectTargetSystem(contexts));
-            // Add(new EnemyDeathSystem(contexts));
+            Add(new EnemyDeathSystem(contexts));
             // Add(new EnemySpawnSystem(contexts));
             Add(new EnemyTestSystem(contexts.game));
 
@@ -33,6 +34,7 @@ namespace _GameLogic_.Enemy
             var enemyEntity = _contextsGame.CreateEntity();
             enemyView.Link(enemyEntity);
             enemyEntity.AddAttackDamage(4f);
+            enemyEntity.AddHealth(10);
             enemyEntity.AddNMAgentDestination(pointView.transform.position);
         }
     }

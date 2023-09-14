@@ -8,7 +8,7 @@ namespace _GameLogic_.Towers.Systems
         {
             Add(new TowerInitializeSystem(contexts));
             Add(new TowerAttackSystem(contexts));
-            // Add(new TowerDetectionAreaSystem(contexts));
+            // Add(new TowerUpgradeSystem(contexts));
         }
     }
 }

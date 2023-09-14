@@ -27,7 +27,7 @@ namespace _GameLogic_.Enemy
             foreach (var castleEntity in entities)
             {
                 var enemy = _contextsGame.GetEntityWithHashCode(castleEntity.detectionAreaTrigger.targetHashcode);
-                enemy.AddAttack(castleEntity.hashCode.value);
+                enemy?.AddAttack(castleEntity.hashCode.value);
             }
         }
     }

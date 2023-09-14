@@ -5,8 +5,11 @@ namespace _GameLogic_.Enemy
 {
     public class EnemyDeathSystem : ReactiveSystem<GameEntity>
     {
+        private GameContext _contextsGame;
+
         public EnemyDeathSystem(Contexts contexts) : base(contexts.game)
         {
+            _contextsGame = contexts.game;
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -23,7 +26,9 @@ namespace _GameLogic_.Enemy
         {
             foreach (var entity in entities)
             {
-                entity.Destroy();
+                _contextsGame.CreateEntity().AddReward(entity.reward.value);
+                var gameObject = entity.transform.value.gameObject;
+                EnemySpawnerSystem.Pool.Push(gameObject.GetComponent<EnemyView>());
             }
         }
     }

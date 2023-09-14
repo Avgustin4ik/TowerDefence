@@ -15,7 +15,6 @@ namespace _GameLogic_.Data
     public class EnemyConfig : ScriptableObject
     {
         [field: SerializeField] public float DefaultEnemyHp { get; private set; }
-        // [field: SerializeField] public float DefaultEnemySpeed { get; private set; }
         [field: SerializeField] public float DefaultEnemyDamage { get; private set; }
         [field: SerializeField] public float DefaultEnemyReward { get; private set; }
     }

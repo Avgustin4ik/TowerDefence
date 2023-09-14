@@ -20,7 +20,7 @@ namespace _GameLogic_.Towers.Systems
                 var gameEntity = _contextsGame.CreateEntity();
                 towerView.Link(gameEntity);
                 gameEntity.AddAttackDamage(1);
-                gameEntity.AddFireRate(1);
+                gameEntity.AddFireRate(5);
             }
         }
     }

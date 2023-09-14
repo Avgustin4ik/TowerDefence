@@ -9,7 +9,6 @@ namespace _GameLogic_.Common
             Add(new DetectDeathSystem(contexts));
             Add(new AttackSystem(contexts));
             Add(new DetectionAreaSystem(contexts));
-            // Add(new DestroyEntitySystem(contexts));
         }
     }
 }

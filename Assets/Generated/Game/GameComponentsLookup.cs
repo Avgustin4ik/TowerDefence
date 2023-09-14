@@ -20,15 +20,26 @@ public static class GameComponentsLookup {
     public const int NavMeshAgent = 9;
     public const int NMAgentDestination = 10;
     public const int TimerAmount = 11;
-    public const int DetectionArea = 12;
-    public const int DetectionAreaTrigger = 13;
-    public const int FireRate = 14;
-    public const int Enemy = 15;
-    public const int Reward = 16;
-    public const int Tower = 17;
-    public const int TowerLevel = 18;
+    public const int Cooldown = 12;
+    public const int DetectionArea = 13;
+    public const int DetectionAreaTrigger = 14;
+    public const int FireRate = 15;
+    public const int EnemyAmount = 16;
+    public const int GameData = 17;
+    public const int SoftCurrency = 18;
+    public const int WaveLevel = 19;
+    public const int Enemy = 20;
+    public const int EnemySpawner = 21;
+    public const int Reward = 22;
+    public const int SpawnPoint = 23;
+    public const int SpawnRequest = 24;
+    public const int Clicked = 25;
+    public const int Tower = 26;
+    public const int TowerLevel = 27;
+    public const int AnySoftCurrencyListener = 28;
+    public const int Input = 29;
 
-    public const int TotalComponents = 19;
+    public const int TotalComponents = 30;
 
     public static readonly string[] componentNames = {
         "HashCode",
@@ -43,13 +54,24 @@ public static class GameComponentsLookup {
         "NavMeshAgent",
         "NMAgentDestination",
         "TimerAmount",
+        "Cooldown",
         "DetectionArea",
         "DetectionAreaTrigger",
         "FireRate",
+        "EnemyAmount",
+        "GameData",
+        "SoftCurrency",
+        "WaveLevel",
         "Enemy",
+        "EnemySpawner",
         "Reward",
+        "SpawnPoint",
+        "SpawnRequest",
+        "Clicked",
         "Tower",
-        "TowerLevel"
+        "TowerLevel",
+        "AnySoftCurrencyListener",
+        "Input"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -65,12 +87,23 @@ public static class GameComponentsLookup {
         typeof(_GameLogic_.Common.Components.NavMeshAgentComponent),
         typeof(_GameLogic_.Common.Components.NMAgentDestinationComponent),
         typeof(_GameLogic_.Common.Components.TimerAmountComponent),
+        typeof(_GameLogic_.Common.CooldownComponent),
         typeof(_GameLogic_.Common.DetectionAreaComponent),
         typeof(_GameLogic_.Common.DetectionAreaTriggerComponent),
         typeof(_GameLogic_.Common.FireRateComponent),
+        typeof(_GameLogic_.Data.Components.EnemyAmountComponent),
+        typeof(_GameLogic_.Data.Components.GameDataComponent),
+        typeof(_GameLogic_.Data.Components.SoftCurrencyComponent),
+        typeof(_GameLogic_.Data.Components.WaveLevelComponent),
         typeof(_GameLogic_.Enemy.EnemyComponent),
+        typeof(_GameLogic_.Enemy.EnemySpawnerComponent),
         typeof(_GameLogic_.Enemy.RewardComponent),
+        typeof(_GameLogic_.Enemy.SpawnPointComponent),
+        typeof(_GameLogic_.Enemy.SpawnRequestComponent),
+        typeof(_GameLogic_.Input.Components.ClickedComponent),
         typeof(_GameLogic_.Towers.Component.TowerComponent),
-        typeof(_GameLogic_.Towers.Component.TowerLevelComponent)
+        typeof(_GameLogic_.Towers.Component.TowerLevelComponent),
+        typeof(AnySoftCurrencyListenerComponent),
+        typeof(InputComponent)
     };
 }

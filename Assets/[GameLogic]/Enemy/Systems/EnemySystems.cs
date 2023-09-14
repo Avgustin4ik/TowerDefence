@@ -1,4 +1,3 @@
-using System;
 using _GameLogic_.Castle.Views;
 using Entitas;
 
@@ -8,6 +7,8 @@ namespace _GameLogic_.Enemy
     {
         public EnemySystems(Contexts contexts)
         {
+            Add(new EnemySpawnerSystem(contexts));
+            Add(new EnemySpawnerRequestSystem(contexts));
             Add(new NavMeshMovingSystem(contexts));
             Add(new EnemyAttackSystem(contexts));
             Add(new EnemyDetectTargetSystem(contexts));
@@ -29,13 +30,17 @@ namespace _GameLogic_.Enemy
 
         public void Initialize()
         {
-            var enemyView = UnityEngine.Object.FindObjectOfType<EnemyView>();
-            var pointView = UnityEngine.Object.FindObjectOfType<CastleView>();
-            var enemyEntity = _contextsGame.CreateEntity();
-            enemyView.Link(enemyEntity);
-            enemyEntity.AddAttackDamage(4f);
-            enemyEntity.AddHealth(10);
-            enemyEntity.AddNMAgentDestination(pointView.transform.position);
+            
+            // var enemyView = UnityEngine.Object.FindObjectOfType<EnemyView>();
+            // var pointView = UnityEngine.Object.FindObjectOfType<CastleView>();
+            // var enemyEntity = _contextsGame.CreateEntity();
+            // enemyView.Link(enemyEntity);
+            // enemyEntity.AddAttackDamage(4f);
+            // enemyEntity.AddHealth(10);
+            // enemyEntity.AddReward(50);
+            // enemyEntity.AddNMAgentDestination(pointView.transform.position);
         }
+        
+        
     }
 }

@@ -28,10 +28,17 @@ namespace _GameLogic_.Common
                 {
                     if (IsInFlatArea(enemy.transform.value.position, detectionEntity.detectionArea.value))
                     {
-                        if(!detectionEntity.hasDetectionAreaTrigger) detectionEntity.AddDetectionAreaTrigger(enemy.hashCode.value);
-                        continue;
+                        if (!detectionEntity.hasDetectionAreaTrigger)
+                        {
+                            detectionEntity.AddDetectionAreaTrigger(enemy.hashCode.value);
+                            break;
+                        } 
                     }
-                    if(detectionEntity.hasDetectionAreaTrigger) detectionEntity.RemoveDetectionAreaTrigger();
+                    else
+                    {
+                        if(detectionEntity.hasDetectionAreaTrigger) detectionEntity.RemoveDetectionAreaTrigger();
+                    }
+
                     
                 }
             }

@@ -1,9 +1,10 @@
 using _GameCore_;
+using _GameLogic_.Input.Views;
 using UnityEngine;
 
 namespace _GameLogic_.Towers.Views
 {
-    public class TowerView : View
+    public class TowerView : View, IRaycasted
     {
         [SerializeField] private DetectionArea detectionArea;
         public override void Link(GameEntity entity)
@@ -12,6 +13,9 @@ namespace _GameLogic_.Towers.Views
             entity.isTower = true;
             entity.AddTowerLevel(1);
             entity.AddDetectionArea(detectionArea.Bounds);
+            
         }
+
+        public GameEntity RaycastedEntity => GameEntity;
     }
 }

@@ -8,15 +8,18 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
+    public const int HashCode = 0;
+    public const int Transform = 1;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 2;
 
     public static readonly string[] componentNames = {
-
+        "HashCode",
+        "Transform"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(_GameCore_.Components.HashCodeComponent),
+        typeof(_GameCore_.Components.TransformComponent)
     };
 }

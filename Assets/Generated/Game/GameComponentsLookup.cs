@@ -10,16 +10,67 @@ public static class GameComponentsLookup {
 
     public const int HashCode = 0;
     public const int Transform = 1;
+    public const int Castle = 2;
+    public const int Attack = 3;
+    public const int AttackRange = 4;
+    public const int AttackDamage = 5;
+    public const int Dead = 6;
+    public const int Health = 7;
+    public const int MovementSpeed = 8;
+    public const int NavMeshAgent = 9;
+    public const int NMAgentDestination = 10;
+    public const int TimerAmount = 11;
+    public const int DetectionArea = 12;
+    public const int DetectionAreaTrigger = 13;
+    public const int FireRate = 14;
+    public const int Enemy = 15;
+    public const int Reward = 16;
+    public const int Tower = 17;
+    public const int TowerLevel = 18;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 19;
 
     public static readonly string[] componentNames = {
         "HashCode",
-        "Transform"
+        "Transform",
+        "Castle",
+        "Attack",
+        "AttackRange",
+        "AttackDamage",
+        "Dead",
+        "Health",
+        "MovementSpeed",
+        "NavMeshAgent",
+        "NMAgentDestination",
+        "TimerAmount",
+        "DetectionArea",
+        "DetectionAreaTrigger",
+        "FireRate",
+        "Enemy",
+        "Reward",
+        "Tower",
+        "TowerLevel"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(_GameCore_.Components.HashCodeComponent),
-        typeof(_GameCore_.Components.TransformComponent)
+        typeof(_GameCore_.Components.TransformComponent),
+        typeof(_GameLogic_.Castle.Components.CastleComponent),
+        typeof(_GameLogic_.Common.AttackComponent),
+        typeof(_GameLogic_.Common.AttackRangeComponent),
+        typeof(_GameLogic_.Common.Components.AttackDamageComponent),
+        typeof(_GameLogic_.Common.Components.DeadComponent),
+        typeof(_GameLogic_.Common.Components.HealthComponent),
+        typeof(_GameLogic_.Common.Components.MovementSpeedComponent),
+        typeof(_GameLogic_.Common.Components.NavMeshAgentComponent),
+        typeof(_GameLogic_.Common.Components.NMAgentDestinationComponent),
+        typeof(_GameLogic_.Common.Components.TimerAmountComponent),
+        typeof(_GameLogic_.Common.DetectionAreaComponent),
+        typeof(_GameLogic_.Common.DetectionAreaTriggerComponent),
+        typeof(_GameLogic_.Common.FireRateComponent),
+        typeof(_GameLogic_.Enemy.EnemyComponent),
+        typeof(_GameLogic_.Enemy.RewardComponent),
+        typeof(_GameLogic_.Towers.Component.TowerComponent),
+        typeof(_GameLogic_.Towers.Component.TowerLevelComponent)
     };
 }

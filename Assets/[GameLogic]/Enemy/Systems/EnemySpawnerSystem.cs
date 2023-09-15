@@ -49,12 +49,10 @@ namespace _GameLogic_.Enemy
         private void UnlinkEnemy(EnemyView obj)
         {
             obj.transform.gameObject.SetActive(false);
-            if (obj.GameEntity != null)
-            {
-                obj.GameEntity.RemoveAllComponents();
-                obj.transform.gameObject.Unlink();
-                obj.GameEntity = null;
-            }
+            var objGameEntity = obj.GameEntity;
+            if (objGameEntity == null) return;
+            objGameEntity.Destroy();
+            obj.GameEntity = null;
         }
 
         private EnemyView InstantiateEnemy()

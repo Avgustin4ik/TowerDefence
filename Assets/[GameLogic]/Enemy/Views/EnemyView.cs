@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace _GameLogic_.Enemy
 {
-    public class EnemyView : View
+    public class EnemyView : PooledView
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
         public override void Link(GameEntity entity)

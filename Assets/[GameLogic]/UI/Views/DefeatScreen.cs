@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace _GameLogic_.UI.Views
 {
-    public class DefeatScreen : View, IEnabledListener
+    public class DefeatScreen : GameView, IEnabledListener
     {
         [SerializeField] private Button restartButton;
         [SerializeField] private TMPro.TMP_Text killCounter;

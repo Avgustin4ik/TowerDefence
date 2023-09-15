@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _GameLogic_.Enemy
 {
-    public class SpawnerView : View
+    public class SpawnerView : GameView
     {
         [SerializeField] private EnemyView _enemyViewPrefab;
         [SerializeField] private Transform _spawnPoint;

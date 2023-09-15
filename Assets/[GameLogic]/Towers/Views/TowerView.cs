@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _GameLogic_.Towers.Views
 {
-    public class TowerView : View, IRaycasted
+    public class TowerView : GameView, IRaycasted
     {
         [SerializeField] private DetectionArea detectionArea;
         public override void Link(GameEntity entity)

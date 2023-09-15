@@ -14,17 +14,17 @@ namespace _GameCore_
             gameObject.Link(entity);
             entity.AddTransform(transform);
             entity.AddHashCode(GetHashCode());
-            entity.OnDestroyEntity += EntityOnOnDestroyEntity;
+            entity.OnDestroyEntity += OnDestroyEntity;
         }
 
-        private void EntityOnOnDestroyEntity(IEntity entity)
+        public virtual void OnDestroyEntity(IEntity entity)
         {
-            entity.OnDestroyEntity -= EntityOnOnDestroyEntity;
+            entity.OnDestroyEntity -= OnDestroyEntity;
+            if (GameEntity == null) return;
             gameObject.Unlink();
-
             GameEntity = null;
-            Destroy(gameObject);
         }
+        
 
         private void OnDestroy()
         {

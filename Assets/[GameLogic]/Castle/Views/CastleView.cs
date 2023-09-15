@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace _GameLogic_.Castle.Views
 {
-    public class CastleView : View
+    public class CastleView : GameView
     {
         [SerializeField] private DetectionArea detectionArea;
         public override void Link(GameEntity entity)

@@ -3,12 +3,11 @@ using System.Linq;
 using _GameLogic_.Data;
 using DesperateDevs.Utils;
 using Entitas;
-using Entitas.Unity;
 using UnityEngine;
 
 namespace _GameLogic_.Enemy
 {
-    public class EnemySpawnerSystem : ReactiveSystem<GameEntity>,IInitializeSystem
+    public class EnemySpawnerSystem : ReactiveSystem<GameEntity>, IInitializeSystem
     {
         public static ObjectPool<EnemyView> Pool;
         private readonly GameContext _contextsGame;
@@ -24,7 +23,8 @@ namespace _GameLogic_.Enemy
             _enemyConfig = enemyConfig;
             var statsEntity = _contextsGame.CreateEntity();
             var newAmount = UnityEngine.Random.Range(1, _enemyConfig.MaxAdditionalEnemyCount);
-            statsEntity.AddEnemyWaveStats(_enemyConfig.DefaultEnemyHp, _enemyConfig.DefaultEnemyDamage, _enemyConfig.DefaultEnemyReward);
+            statsEntity.AddEnemyWaveStats(_enemyConfig.DefaultEnemyHp, _enemyConfig.DefaultEnemyDamage,
+                _enemyConfig.DefaultEnemyReward);
             statsEntity.AddWaveLevel(1);
             statsEntity.AddEnemyAmount(newAmount);
             _statsGroup = _contextsGame.GetGroup(GameMatcher.EnemyWaveStats);
@@ -39,7 +39,7 @@ namespace _GameLogic_.Enemy
             var spawnerView = UnityEngine.Object.FindObjectOfType<SpawnerView>();
             spawnerView.Link(_spawnerEntity);
             _prefab = spawnerView.EnemyViewPrefab;
-            Pool = new ObjectPool<EnemyView>(InstantiateEnemy,UnlinkEnemy);
+            Pool = new ObjectPool<EnemyView>(InstantiateEnemy, UnlinkEnemy);
             for (int i = 0; i < PoolLenght; i++)
             {
                 Pool.Push(InstantiateEnemy());
@@ -57,7 +57,8 @@ namespace _GameLogic_.Enemy
 
         private EnemyView InstantiateEnemy()
         {
-            var enemyView = UnityEngine.Object.Instantiate(_prefab, _spawnerEntity.spawnPoint.value, Quaternion.identity);
+            var enemyView =
+                UnityEngine.Object.Instantiate(_prefab, _spawnerEntity.spawnPoint.value, Quaternion.identity);
             _prefab.transform.position = _spawnerEntity.transform.value.position;
             return enemyView;
         }

@@ -16,7 +16,8 @@ namespace _GameLogic_.Enemy
         {
             _enemyConfig = enemyConfig;
             _contextsGame = contexts.game;
-            _enemyStatsGroup = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.EnemyWaveStats, GameMatcher.WaveLevel));
+            _enemyStatsGroup =
+                contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.EnemyWaveStats, GameMatcher.WaveLevel));
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -33,9 +34,10 @@ namespace _GameLogic_.Enemy
         {
             var dataEntity = _contextsGame.gameDataEntity;
             var currentWaveLevel = dataEntity.waveLevel.value;
-            var newEnemyCount = UnityEngine.Random.Range(currentWaveLevel, currentWaveLevel + _enemyConfig.MaxAdditionalEnemyCount);
-            // spawnerEntity.ReplaceEnemyAmount(spawnerEntity.enemyAmount.value + newEnemyCount);
-            var lastEnemyWave = _enemyStatsGroup.GetEntities().FirstOrDefault(x => x.waveLevel.value == currentWaveLevel);
+            var newEnemyCount = UnityEngine.Random.Range(currentWaveLevel,
+                currentWaveLevel + _enemyConfig.MaxAdditionalEnemyCount);
+            var lastEnemyWave = _enemyStatsGroup.GetEntities()
+                .FirstOrDefault(x => x.waveLevel.value == currentWaveLevel);
             float newHp;
             float newDamage;
             float newReward;
@@ -52,14 +54,15 @@ namespace _GameLogic_.Enemy
                 newDamage = UpgradeValue(lastEnemyWave.enemyWaveStats.damage);
                 newReward = UpgradeValue(lastEnemyWave.enemyWaveStats.reward);
             }
-            
+
             var entity = _contextsGame.CreateEntity();
-            entity.AddEnemyWaveStats(newHp,newDamage,newReward);
+            entity.AddEnemyWaveStats(newHp, newDamage, newReward);
             entity.AddWaveLevel(currentWaveLevel);
             entity.AddEnemyAmount(newEnemyCount);
             return;
 
-            float UpgradeValue(float defaultValue) => defaultValue + Random.Range(0,_enemyConfig.EnemyDifficultMultiplayer);
+            float UpgradeValue(float defaultValue) =>
+                defaultValue + Random.Range(0, _enemyConfig.EnemyDifficultMultiplayer);
         }
     }
 }

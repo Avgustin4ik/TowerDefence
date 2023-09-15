@@ -14,6 +14,7 @@ namespace _GameLogic_.Common
             return source.x > area.min.x && source.x < area.max.x &&
                    source.z > area.min.z && source.z < area.max.z;
         }
+
         public DetectionAreaSystem(Contexts contexts)
         {
             _enemyGroup = contexts.game.GetGroup(GameMatcher.Enemy);
@@ -32,14 +33,12 @@ namespace _GameLogic_.Common
                         {
                             detectionEntity.AddDetectionAreaTrigger(enemy.hashCode.value);
                             break;
-                        } 
+                        }
                     }
                     else
                     {
-                        if(detectionEntity.hasDetectionAreaTrigger) detectionEntity.RemoveDetectionAreaTrigger();
+                        if (detectionEntity.hasDetectionAreaTrigger) detectionEntity.RemoveDetectionAreaTrigger();
                     }
-
-                    
                 }
             }
         }

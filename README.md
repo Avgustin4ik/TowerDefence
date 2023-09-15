@@ -12,6 +12,7 @@ ECS test task
 
 EnemySpawner собирает эти (request)Entity, выбирает сущность с наименьшем номером волны (следующим по игровой логике) и спавнит враго в нужном количестве и с нужными статами. Когда все враги из конкретной волны заспавнятся, (request)Entity удаляется.
 
+
 |                         Game View                          |                      Editor View                       |
 |:----------------------------------------------------------:|:------------------------------------------------------:|
-| ![](Screenshots/Screenshot 2023-09-15 at 11.08.54.png) | ![](Screenshots/Screenshot 2023-09-15 at 11.09.20.png) |
+| ![](https://github.com/Avgustin4ik/TowerDefence/blob/main/Screenshots/Screenshot%202023-09-15%20at%2011.08.54.png?raw=true) | ![](https://github.com/Avgustin4ik/TowerDefence/blob/main/Screenshots/Screenshot%202023-09-15%20at%2011.09.20.png?raw=true) |

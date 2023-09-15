@@ -7,5 +7,5 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 public interface IAnySoftCurrencyListener {
-    void OnAnySoftCurrency(GameEntity entity, int value);
+    void OnAnySoftCurrency(GameEntity entity, float value);
 }

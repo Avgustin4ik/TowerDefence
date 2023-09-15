@@ -27,6 +27,7 @@ namespace _GameLogic_.Enemy
             foreach (var entity in entities)
             {
                 _contextsGame.CreateEntity().AddReward(entity.reward.value);
+                _contextsGame.gameDataEntity.ReplaceKillCounter(_contextsGame.gameDataEntity.killCounter.value + 1);
                 var gameObject = entity.transform.value.gameObject;
                 EnemySpawnerSystem.Pool.Push(gameObject.GetComponent<EnemyView>());
             }

@@ -23,24 +23,31 @@ public static class GameComponentsLookup {
     public const int Cooldown = 12;
     public const int DetectionArea = 13;
     public const int DetectionAreaTrigger = 14;
-    public const int FireRate = 15;
-    public const int EnemyAmount = 16;
-    public const int GameData = 17;
-    public const int SoftCurrency = 18;
-    public const int WaveLevel = 19;
-    public const int Enemy = 20;
-    public const int EnemySpawner = 21;
-    public const int Reward = 22;
-    public const int SpawnPoint = 23;
-    public const int SpawnRequest = 24;
-    public const int Clicked = 25;
-    public const int Tower = 26;
-    public const int TowerLevel = 27;
-    public const int UpgradeCost = 28;
-    public const int AnySoftCurrencyListener = 29;
-    public const int Input = 30;
+    public const int Enabled = 15;
+    public const int FireRate = 16;
+    public const int Defeat = 17;
+    public const int EnemyAmount = 18;
+    public const int GameData = 19;
+    public const int KillCounter = 20;
+    public const int RestartRequest = 21;
+    public const int SoftCurrency = 22;
+    public const int WaveLevel = 23;
+    public const int Enemy = 24;
+    public const int EnemySpawner = 25;
+    public const int EnemyWaveStats = 26;
+    public const int Reward = 27;
+    public const int SpawnPoint = 28;
+    public const int SpawnRequest = 29;
+    public const int Clicked = 30;
+    public const int Tower = 31;
+    public const int TowerLevel = 32;
+    public const int UpgradeCost = 33;
+    public const int UiDefeatScreen = 34;
+    public const int AnySoftCurrencyListener = 35;
+    public const int EnabledListener = 36;
+    public const int Input = 37;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 38;
 
     public static readonly string[] componentNames = {
         "HashCode",
@@ -58,13 +65,18 @@ public static class GameComponentsLookup {
         "Cooldown",
         "DetectionArea",
         "DetectionAreaTrigger",
+        "Enabled",
         "FireRate",
+        "Defeat",
         "EnemyAmount",
         "GameData",
+        "KillCounter",
+        "RestartRequest",
         "SoftCurrency",
         "WaveLevel",
         "Enemy",
         "EnemySpawner",
+        "EnemyWaveStats",
         "Reward",
         "SpawnPoint",
         "SpawnRequest",
@@ -72,7 +84,9 @@ public static class GameComponentsLookup {
         "Tower",
         "TowerLevel",
         "UpgradeCost",
+        "UiDefeatScreen",
         "AnySoftCurrencyListener",
+        "EnabledListener",
         "Input"
     };
 
@@ -92,13 +106,18 @@ public static class GameComponentsLookup {
         typeof(_GameLogic_.Common.CooldownComponent),
         typeof(_GameLogic_.Common.DetectionAreaComponent),
         typeof(_GameLogic_.Common.DetectionAreaTriggerComponent),
+        typeof(_GameLogic_.Common.EnabledComponent),
         typeof(_GameLogic_.Common.FireRateComponent),
+        typeof(_GameLogic_.Data.Components.DefeatComponent),
         typeof(_GameLogic_.Data.Components.EnemyAmountComponent),
         typeof(_GameLogic_.Data.Components.GameDataComponent),
+        typeof(_GameLogic_.Data.Components.KillCounterComponent),
+        typeof(_GameLogic_.Data.Components.RestartRequestComponent),
         typeof(_GameLogic_.Data.Components.SoftCurrencyComponent),
         typeof(_GameLogic_.Data.Components.WaveLevelComponent),
         typeof(_GameLogic_.Enemy.EnemyComponent),
         typeof(_GameLogic_.Enemy.EnemySpawnerComponent),
+        typeof(_GameLogic_.Enemy.EnemyWaveStatsComponent),
         typeof(_GameLogic_.Enemy.RewardComponent),
         typeof(_GameLogic_.Enemy.SpawnPointComponent),
         typeof(_GameLogic_.Enemy.SpawnRequestComponent),
@@ -106,7 +125,9 @@ public static class GameComponentsLookup {
         typeof(_GameLogic_.Towers.Component.TowerComponent),
         typeof(_GameLogic_.Towers.Component.TowerLevelComponent),
         typeof(_GameLogic_.Towers.Component.UpgradeCostComponent),
+        typeof(_GameLogic_.UI.Components.UiDefeatScreenComponent),
         typeof(AnySoftCurrencyListenerComponent),
+        typeof(EnabledListenerComponent),
         typeof(InputComponent)
     };
 }

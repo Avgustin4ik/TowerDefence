@@ -11,14 +11,14 @@ public partial class GameEntity {
     public _GameLogic_.Enemy.RewardComponent reward { get { return (_GameLogic_.Enemy.RewardComponent)GetComponent(GameComponentsLookup.Reward); } }
     public bool hasReward { get { return HasComponent(GameComponentsLookup.Reward); } }
 
-    public void AddReward(int newValue) {
+    public void AddReward(float newValue) {
         var index = GameComponentsLookup.Reward;
         var component = (_GameLogic_.Enemy.RewardComponent)CreateComponent(index, typeof(_GameLogic_.Enemy.RewardComponent));
         component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceReward(int newValue) {
+    public void ReplaceReward(float newValue) {
         var index = GameComponentsLookup.Reward;
         var component = (_GameLogic_.Enemy.RewardComponent)CreateComponent(index, typeof(_GameLogic_.Enemy.RewardComponent));
         component.value = newValue;

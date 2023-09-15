@@ -29,6 +29,5 @@ public sealed class InputExecuteSystem : IExecuteSystem
             (int)Math.Round(mouseWorldPos.x),
             (int)Math.Round(mouseWorldPos.y)
         ));
-        Debug.Log(e.input.value);
     }
 }

@@ -20,6 +20,7 @@ namespace _GameLogic_.Data.Systems
             data.AddWaveLevel(1);
             data.AddTimerAmount(_gameSettings.WaveDuration);
             data.AddCooldown(_gameSettings.WaveDuration);
+            data.AddKillCounter(0);
         }
     }
 }

@@ -9,6 +9,7 @@
 public sealed class GameEventSystems : Feature {
 
     public GameEventSystems(Contexts contexts) {
+        Add(new EnabledEventSystem(contexts)); // priority: 0
         Add(new AnySoftCurrencyEventSystem(contexts)); // priority: 0
     }
 }

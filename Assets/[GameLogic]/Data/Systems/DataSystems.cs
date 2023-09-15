@@ -1,3 +1,5 @@
+using System;
+
 namespace _GameLogic_.Data.Systems
 {
     public class DataSystems : Feature
@@ -6,8 +8,9 @@ namespace _GameLogic_.Data.Systems
         {
             Add(new InitializeDataSystem(contexts));
             Add(new CollectSoftCurrencySystem(contexts));
-            // Add(new EnemyAmountSystem(contexts));
             Add(new WaveLevelSystem(contexts));
+            Add(new DefeatDetectSystem(contexts));
+            Add(new LevelRestartSystem(contexts));
         }
     }
 }

@@ -21,7 +21,6 @@ namespace _GameLogic_.Enemy
 
         protected override void Execute(List<GameEntity> entities)
         {
-            //todo replace
             foreach (var gameEntity in entities)
             {
                 gameEntity.Destroy();

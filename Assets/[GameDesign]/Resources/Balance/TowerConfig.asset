@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DefaultTowerDamage>k__BackingField: 3
   <DefaultTowerFireRate>k__BackingField: 1
-  <UpgradeCostMultiplayer>k__BackingField: 2
+  <UpgradeCostMultiplayer>k__BackingField: 4
   <UpgradeStatsMultiplayer>k__BackingField: 1.5
-  <DefaultTowerUpgradeCost>k__BackingField: 0
+  <DefaultTowerUpgradeCost>k__BackingField: 200

@@ -11,14 +11,14 @@ public partial class GameEntity {
     public _GameLogic_.Data.Components.SoftCurrencyComponent softCurrency { get { return (_GameLogic_.Data.Components.SoftCurrencyComponent)GetComponent(GameComponentsLookup.SoftCurrency); } }
     public bool hasSoftCurrency { get { return HasComponent(GameComponentsLookup.SoftCurrency); } }
 
-    public void AddSoftCurrency(int newValue) {
+    public void AddSoftCurrency(float newValue) {
         var index = GameComponentsLookup.SoftCurrency;
         var component = (_GameLogic_.Data.Components.SoftCurrencyComponent)CreateComponent(index, typeof(_GameLogic_.Data.Components.SoftCurrencyComponent));
         component.value = newValue;
         AddComponent(index, component);
     }
 
-    public void ReplaceSoftCurrency(int newValue) {
+    public void ReplaceSoftCurrency(float newValue) {
         var index = GameComponentsLookup.SoftCurrency;
         var component = (_GameLogic_.Data.Components.SoftCurrencyComponent)CreateComponent(index, typeof(_GameLogic_.Data.Components.SoftCurrencyComponent));
         component.value = newValue;

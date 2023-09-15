@@ -30,6 +30,7 @@ namespace _GameLogic_.Towers.Systems
         {
             foreach (var towerEntity in entities)
             {
+                _contextsGame.gameDataEntity.ReplaceSoftCurrency(_contextsGame.gameDataEntity.softCurrency.value - towerEntity.upgradeCost.value);
                 towerEntity.ReplaceAttackDamage(towerEntity.attackDamage.value*_towerConfig.UpgradeStatsMultiplayer);
                 towerEntity.ReplaceFireRate(towerEntity.fireRate.value*_towerConfig.UpgradeStatsMultiplayer);
                 towerEntity.ReplaceTowerLevel(towerEntity.towerLevel.value ++);

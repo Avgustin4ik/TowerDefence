@@ -3,7 +3,6 @@ ECS test task
 
 ТЗ https://docs.google.com/document/d/1AIgBwYgaxbX6AxU_cZ7ct95xKnmxlnUTnTraWzuUCvA/edit?usp=sharing
 
-
 В основе лежит ECSCore кторый связыввает ECS и Unity. ECSCore создает экземпляр класса GameSystems который, в свою очередь, создает экземпляры сисетем, ответственных за конкретную логику.
 
 Смерть врагов реализована через пул объектов.

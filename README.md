@@ -1,5 +1,5 @@
 # TowerDefence
-ECS test task
+ECS test task. Entitas ECS
 
 ТЗ https://docs.google.com/document/d/1AIgBwYgaxbX6AxU_cZ7ct95xKnmxlnUTnTraWzuUCvA/edit?usp=sharing
 
